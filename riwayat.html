@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riwayat pesanan: DentaStok</title>
+  <meta name="description" content="Riwayat pesanan lab Anda di DentaStok. Lacak pengiriman, unduh faktur, dan pesan ulang bahan yang sama dengan satu klik.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/riwayat.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/riwayat.js" defer></script>
+</head>
+<body>
+  <div data-site-header data-cart="3"></div>
+
+  <main class="wrap page history">
+    <div class="history__head">
+      <h1 class="history__title">Riwayat pesanan</h1>
+      <p class="history__lead">Pesan ulang bahan yang sama tanpa mencari dan mengetik ulang daftar belanja.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Status pesanan">
+      <button class="tab is-active" type="button" role="tab" id="tab-semua" aria-selected="true" aria-controls="daftar-pesanan" data-filter="semua">
+        <span class="tab__label">Semua<span class="tab__count">12</span></span>
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-diproses" aria-selected="false" aria-controls="daftar-pesanan" data-filter="diproses" tabindex="-1">
+        <span class="tab__label">Diproses<span class="tab__count">1</span></span>
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-dikirim" aria-selected="false" aria-controls="daftar-pesanan" data-filter="dikirim" tabindex="-1">
+        <span class="tab__label">Dikirim<span class="tab__count">1</span></span>
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-selesai" aria-selected="false" aria-controls="daftar-pesanan" data-filter="selesai" tabindex="-1">
+        <span class="tab__label">Selesai<span class="tab__count">10</span></span>
+      </button>
+    </div>
+
+    <div class="orders" id="daftar-pesanan" role="tabpanel" aria-labelledby="tab-semua">
+      <article class="panel order" data-status="dikirim" aria-labelledby="inv-0148">
+        <div class="order__head">
+          <div class="order__id">
+            <h2 class="mono" id="inv-0148">INV/2026/09/0148</h2>
+            <p>14 Sep 2026  ·  3 produk  ·  Rp&nbsp;1.040.000</p>
+          </div>
+          <span class="status status--sent">Dikirim</span>
+        </div>
+        <div class="order__body">
+          <div class="order__items">
+            <div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone" style="left:-88.46%;top:-138.75%;width:192.31%;height:258.56%"></div>
+            <div class="foto"><img src="assets/img/wax.jpg" alt="Wax Sheet 0,5 mm" style="left:-48.44%;top:-7.81%;width:156.25%;height:156.25%"></div>
+            <div class="foto"><img src="assets/img/pmma.jpg" alt="Disk PMMA 98 mm" style="left:-16.67%;top:0;width:133.33%;height:100%"></div>
+          </div>
+          <div class="track">
+            <ol class="track__steps" aria-label="Status pengiriman">
+              <li class="is-done"><strong>Dikemas</strong><span>14 Sep</span></li>
+              <li class="is-done"><strong>Dikirim</strong><span>15 Sep</span></li>
+              <li><strong>Tiba</strong><span>16 Sep, estimasi</span></li>
+            </ol>
+            <p class="track__resi mono">JNE REG 0012 8841 5520</p>
+          </div>
+          <div class="order__actions">
+            <button class="btn btn--secondary" type="button" data-invoice="INV/2026/09/0148"><img src="assets/icons/doc.svg" width="16" height="16" alt="">Unduh faktur</button>
+            <a class="btn btn--primary" href="keranjang.html"><img src="assets/icons/repeat.svg" width="16" height="16" alt="">Pesan ulang</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel order" data-status="selesai" aria-labelledby="inv-0121">
+        <div class="order__head">
+          <div class="order__id">
+            <h2 class="mono" id="inv-0121">INV/2026/08/0121</h2>
+            <p>22 Agu 2026  ·  5 produk  ·  Rp&nbsp;1.860.000</p>
+          </div>
+          <span class="status status--done">Selesai</span>
+        </div>
+        <div class="order__body">
+          <div class="order__items">
+            <div class="foto"><img src="assets/img/model-gips.jpg" alt="Gips Tipe III Dental Stone" style="left:-33.33%;top:-0.01%;width:166.67%;height:111.12%"></div>
+            <div class="foto"><img src="assets/img/bur.jpg" alt="Bur Diamond Set" style="left:-41.67%;top:0;width:166.67%;height:111.12%"></div>
+            <div class="foto"><img src="assets/img/sarung-tangan.jpg" alt="Sarung Tangan Nitril" style="left:-24.99%;top:0;width:149.98%;height:100%"></div>
+            <span class="order__more" aria-label="2 produk lain">+2</span>
+          </div>
+          <p class="order__note">Diterima 23 Agu 2026 oleh Andi Pratama</p>
+          <div class="order__actions">
+            <a class="btn btn--secondary" href="ulasan.html"><img src="assets/icons/camera.svg" width="16" height="16" alt="">Beri ulasan</a>
+            <button class="btn btn--secondary" type="button" data-invoice="INV/2026/08/0121"><img src="assets/icons/doc.svg" width="16" height="16" alt="">Unduh faktur</button>
+            <a class="btn btn--primary" href="keranjang.html"><img src="assets/icons/repeat.svg" width="16" height="16" alt="">Pesan ulang</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel order" data-status="selesai" aria-labelledby="inv-0093">
+        <div class="order__head">
+          <div class="order__id">
+            <h2 class="mono" id="inv-0093">INV/2026/07/0093</h2>
+            <p>18 Jul 2026  ·  2 produk  ·  Rp&nbsp;505.000</p>
+          </div>
+          <span class="status status--done">Selesai</span>
+        </div>
+        <div class="order__body">
+          <div class="order__items">
+            <div class="foto"><img src="assets/img/alginat.jpg" alt="Alginat Normal Set" style="left:-24.99%;top:0;width:149.98%;height:100%"></div>
+            <div class="foto"><img src="assets/img/poles.jpg" alt="Bahan poles" style="left:-17.49%;top:0;width:149.98%;height:100%"></div>
+          </div>
+          <p class="order__note">Diterima 19 Jul 2026 oleh Andi Pratama</p>
+          <div class="order__actions">
+            <a class="btn btn--secondary" href="ulasan.html"><img src="assets/icons/camera.svg" width="16" height="16" alt="">Beri ulasan</a>
+            <button class="btn btn--secondary" type="button" data-invoice="INV/2026/07/0093"><img src="assets/icons/doc.svg" width="16" height="16" alt="">Unduh faktur</button>
+            <a class="btn btn--primary" href="keranjang.html"><img src="assets/icons/repeat.svg" width="16" height="16" alt="">Pesan ulang</a>
+          </div>
+        </div>
+      </article>
+
+      <p class="panel orders__empty" hidden>Belum ada pesanan dengan status ini di daftar terbaru.</p>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

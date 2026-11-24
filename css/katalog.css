@@ -1,0 +1,87 @@
+/* 02 - Katalog Produk */
+.page.katalog { padding-top: 32px; display: flex; flex-direction: column; gap: 32px; }
+
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* Breadcrumb */
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; color: var(--ink-2); }
+.crumbs li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.crumbs img { width: 14px; height: 14px; flex: none; }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs [aria-current] { font-weight: 500; color: var(--ink); }
+
+/* Judul halaman */
+.katalog__intro { display: flex; flex-direction: column; gap: 10px; }
+.katalog__heading { display: flex; align-items: baseline; gap: 14px; white-space: nowrap; }
+.katalog__heading h1 { font-size: 40px; font-weight: 600; line-height: 1.08; letter-spacing: -0.8px; }
+.katalog__heading span { font-size: 16px; color: var(--muted); }
+.katalog__intro p { max-width: 720px; font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+
+.katalog__body { display: flex; align-items: flex-start; gap: 32px; }
+
+/* Panel filter */
+.filter { width: 264px; flex: none; }
+.filter__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 16px; }
+.filter__head h2 { font-size: 16px; font-weight: 600; }
+.filter__reset { font-size: 13.5px; font-weight: 500; color: var(--brand); border-radius: 4px; }
+.filter__reset:hover { text-decoration: underline; text-underline-offset: 3px; }
+.filter__toggle { display: none; font-size: 13.5px; font-weight: 500; color: var(--brand); border-radius: 4px; }
+.filter__group { min-width: 0; margin: 0; padding: 16px 20px 18px; border: 0; border-top: 1px solid var(--line); }
+.filter__group legend { float: left; width: 100%; padding: 0; margin-bottom: 12px; font-size: 13.5px; font-weight: 500; color: var(--muted); }
+.filter__opts { clear: both; display: flex; flex-direction: column; gap: 12px; }
+.filter__opt { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.filter__opt span:first-of-type { flex: 1 1 0; min-width: 0; font-size: 14.5px; color: var(--ink); }
+.filter__opt .mono { flex: none; font-size: 13px; color: var(--muted); }
+.filter__opt input {
+  -webkit-appearance: none; appearance: none; flex: none; width: 18px; height: 18px; margin: 0;
+  border: 1.25px solid #9aa39e; border-radius: 4px; background: var(--surface) center / 14px 14px no-repeat; cursor: pointer;
+}
+.filter__opt input:checked { background-color: var(--brand); border-color: var(--brand); background-image: url("../assets/icons/check-white.svg"); }
+.filter__opt:hover input:not(:checked) { border-color: var(--ink-2); }
+
+/* Hasil */
+.results { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.results__bar { display: flex; align-items: center; gap: 12px; }
+.results__count { flex: 1 1 0; min-width: 0; font-size: 14.5px; color: var(--ink-2); }
+.results__sort-label { font-size: 14.5px; color: var(--muted); white-space: nowrap; }
+.results__sort {
+  -webkit-appearance: none; appearance: none; width: 232px; height: 42px; padding: 0 40px 0 14px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font-size: 14.5px; color: var(--ink); cursor: pointer;
+  background: var(--surface) url("../assets/icons/chev-down.svg") right 14px center / 16px 16px no-repeat;
+}
+.results__sort:hover { border-color: var(--ink-2); }
+.results__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 16px; }
+.results__grid .card[hidden] { display: none; }
+.results__grid .card__media .foto { height: auto; aspect-ratio: 310 / 180; }
+.results__grid .price { padding-top: 4px; }
+.results__empty { padding: 32px 20px; text-align: center; font-size: 14.5px; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+
+/* Paginasi */
+.pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding-top: 16px; }
+.pager__num { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); font-weight: 500; color: var(--ink); }
+.pager__num:hover { border-color: var(--ink-2); }
+.pager__num.is-current { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+@media (max-width: 1024px) {
+  .katalog__body { flex-direction: column; align-items: stretch; }
+  .filter { width: 100%; }
+  .filter__groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filter__group:nth-child(2n) { border-left: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  .page.katalog { padding-top: 24px; gap: 24px; }
+  .katalog__heading h1 { font-size: 32px; letter-spacing: -0.6px; }
+  .katalog__intro p { font-size: 15px; }
+  .filter__groups { grid-template-columns: minmax(0, 1fr); }
+  .filter__group:nth-child(2n) { border-left: 0; }
+  .filter.is-collapsible .filter__toggle { display: inline-block; }
+  .filter.is-collapsible:not(.is-open) .filter__groups { display: none; }
+  .filter.is-collapsible .filter__head h2 { flex: 1; }
+  .results__bar { flex-wrap: wrap; }
+  .results__count { flex-basis: 100%; }
+  .results__sort { flex: 1 1 0; min-width: 0; width: auto; }
+  .results__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (max-width: 420px) {
+  .results__grid { grid-template-columns: minmax(0, 1fr); }
+}

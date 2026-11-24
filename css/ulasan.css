@@ -1,0 +1,151 @@
+/* 09 + 10 - Tulis Ulasan (sebelum dan sesudah foto diunggah) */
+
+/* Header: "Riwayat pesanan" aktif, karena ulasan bagian dari riwayat */
+.mainbar__link[href="riwayat.html"] { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 6px; font-weight: 600; color: var(--ink); }
+.mainbar__link[href="riwayat.html"]::after { content: ""; align-self: stretch; height: 2px; background: var(--brand); }
+
+.review-page { display: flex; flex-direction: column; gap: 24px; padding-top: 32px; }
+
+/* Jejak navigasi */
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; color: var(--ink-2); }
+.crumbs li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.crumbs li + li::before { content: ""; width: 14px; height: 14px; background: url("../assets/icons/chev-right.svg") center / 14px 14px no-repeat; }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 500; }
+
+.review-page__head { display: flex; flex-direction: column; gap: 8px; }
+.review-page__title { font-size: 40px; font-weight: 600; line-height: 1.08; letter-spacing: -0.8px; }
+.review-page__lead { font-size: 16px; color: var(--ink-2); }
+
+.review-layout { display: flex; align-items: flex-start; gap: 32px; }
+
+/* Form ulasan */
+.review { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.review__product { display: flex; align-items: center; gap: 16px; padding: 22px 28px; }
+.review__product .foto { width: 72px; height: 72px; }
+.review__product-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.review__product-text h2 { font-size: 17px; font-weight: 600; line-height: 1.5; }
+.review__product-text p { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); }
+.review__product-text .mono { font-size: 13px; color: var(--muted); }
+
+.field { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 24px 28px; border: 0; border-top: 1px solid var(--line); min-width: 0; }
+.field__title { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--ink); }
+.field__desc { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+fieldset.field > legend { float: left; width: 100%; padding: 0; margin-bottom: 14px; }
+fieldset.field { display: block; }
+fieldset.field > legend + * { clear: both; }
+
+/* Rating bintang */
+.rate__row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.stars { display: flex; gap: 6px; }
+.stars label { display: block; width: 30px; height: 30px; cursor: pointer; border-radius: 4px; }
+.stars svg { display: block; fill: var(--line-strong); transition: fill .1s; }
+.stars label.is-on svg { fill: var(--ink); }
+.stars label.is-hover svg { fill: var(--ink-2); }
+.stars input:focus-visible + label { outline: 2px solid var(--brand); outline-offset: 2px; }
+.rate__hint { font-size: 15px; color: var(--muted); }
+.rate__hint.is-set { font-weight: 500; color: var(--ink); }
+
+/* Foto: garis putus-putus 1,5 px dibuat dengan SVG supaya tajam seperti di Figma */
+.dropzone, .thumbs__add { --dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23C5CDC9' stroke-width='3' stroke-dasharray='5 4'/%3E%3C/svg%3E"); }
+.dropzone:hover, .dropzone.is-drag, .thumbs__add:hover, .thumbs__add.is-drag { --dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%231B5E45' stroke-width='3' stroke-dasharray='5 4'/%3E%3C/svg%3E"); }
+.photos__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.photos__label { display: flex; align-items: center; gap: 10px; }
+.photos__label .field__title { cursor: pointer; }
+.tag-wajib { padding: 2px 8px; border-radius: 4px; background: #fbf1e1; color: var(--warn-ink); font-size: 12.5px; font-weight: 500; }
+.photos__count { font-size: 13.5px; color: var(--muted); white-space: nowrap; }
+
+.dropzone { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 37.5px 16px; border-radius: var(--radius); background: var(--dash) var(--canvas); text-align: center; cursor: pointer; transition: background-color .15s; }
+.dropzone > img { width: 30px; height: 30px; }
+.dropzone strong { font-size: 15.5px; font-weight: 500; color: var(--ink); }
+.dropzone > span:not(.btn) { font-size: 14px; color: var(--muted); }
+.dropzone__btn { margin-top: 14px; }
+.dropzone:hover .dropzone__btn { border-color: var(--ink-2); }
+.dropzone.is-drag { background-color: var(--tint); }
+.photos__input:focus-visible ~ .dropzone,
+.photos__input:focus-visible ~ .thumbs .thumbs__add { outline: 2px solid var(--brand); outline-offset: 2px; }
+.dropzone[hidden], .thumbs[hidden] { display: none; }
+
+.thumbs { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; }
+.thumb { display: flex; flex-direction: column; gap: 6px; width: 128px; }
+.thumb__img { position: relative; width: 128px; height: 128px; border-radius: var(--radius); overflow: hidden; background: var(--tint); }
+.thumb__img > img { position: absolute; max-width: none; }
+.thumb__img > img.is-cover { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb__remove { position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 12px; background: rgba(20, 26, 23, .72); display: flex; align-items: center; justify-content: center; }
+.thumb__remove img { width: 14px; height: 14px; }
+.thumb__remove:hover { background: rgba(20, 26, 23, .9); }
+.thumb__remove:focus-visible { outline: 2px solid #fff; outline-offset: 1px; box-shadow: 0 0 0 4px var(--brand); }
+.thumb__name { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.thumbs__add { width: 128px; height: 128px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: var(--radius); background: var(--dash) var(--canvas); font-size: 13.5px; font-weight: 500; color: var(--ink-2); cursor: pointer; transition: background-color .15s; }
+.thumbs__add img { width: 22px; height: 22px; }
+.thumbs__add.is-drag { background-color: var(--tint); }
+.thumbs__add[hidden] { display: none; }
+
+/* Isi ulasan */
+.textbox { height: 140px; display: flex; flex-direction: column; padding: 14px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); }
+.textbox:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(27, 94, 69, .12); }
+.textbox textarea { flex: 1; min-height: 0; width: 100%; padding: 0; border: 0; outline: 0; resize: none; background: transparent; font-size: 15px; line-height: 1.55; color: var(--ink); }
+.textbox textarea::placeholder { color: var(--muted); opacity: 1; }
+.textbox__count { font-size: 12.5px; color: var(--muted); text-align: right; }
+
+.chips { display: block; margin: 0; padding: 4px 0 0; border: 0; min-width: 0; }
+.chips legend { float: left; width: 100%; padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.chips__list { clear: both; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips__list label { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); font-size: 13.5px; color: var(--ink); cursor: pointer; white-space: nowrap; transition: border-color .15s; }
+.chips__list label img { display: none; width: 14px; height: 14px; }
+.chips__list label:hover { border-color: var(--ink-2); }
+.chips__list input:checked + label { background: #e4f0ea; border-color: var(--brand); color: var(--brand); font-weight: 500; }
+.chips__list input:checked + label img { display: block; }
+.chips__list input:focus-visible + label { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* Bar kirim */
+.submitbar { display: flex; align-items: center; gap: 16px; padding: 18px 28px; border-top: 1px solid var(--line); background: var(--tint); }
+.submitbar__msg { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink-2); }
+.submitbar__msg img { width: 18px; height: 18px; flex: none; }
+.submitbar__btn { height: 46px; padding: 0 26px; background: var(--brand); color: #fff; }
+.submitbar__btn:hover { background: #164d39; }
+.submitbar__btn:disabled { background: var(--tint); color: var(--muted); cursor: not-allowed; }
+
+/* Produk dalam pesanan */
+.order-items { width: 400px; flex: none; }
+.order-items__head { display: flex; flex-direction: column; gap: 4px; padding: 20px 22px 16px; }
+.order-items__head h2 { font-size: 17px; font-weight: 600; line-height: 1.5; }
+.order-items__head p { font-size: 14px; color: var(--ink-2); }
+.order-items__list { margin: 0; padding: 0; list-style: none; }
+.order-items__list li { display: flex; align-items: center; gap: 12px; padding: 14px 22px; border-top: 1px solid var(--line); }
+.order-items__list li.is-current { background: var(--tint); }
+.order-items__list .foto { width: 48px; height: 48px; }
+.order-items__text { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.order-items__text strong { font-size: 14px; font-weight: 500; }
+.pill { padding: 2px 8px; border-radius: 4px; background: var(--tint); color: var(--ink-2); font-size: 12px; font-weight: 500; }
+.pill--on { background: #e4f0ea; color: var(--brand); }
+.order-items__note { display: flex; align-items: flex-start; gap: 10px; padding: 16px 22px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+.order-items__note img { width: 16px; height: 16px; flex: none; margin-top: 2px; }
+
+@media (max-width: 1200px) {
+  .order-items { width: 340px; }
+}
+@media (max-width: 1024px) {
+  .review-layout { flex-direction: column; align-items: stretch; }
+  .review { flex: none; }
+  .order-items { width: 100%; }
+}
+@media (max-width: 760px) {
+  .mainbar__link[href="riwayat.html"] { display: none; }
+  .review-page { padding-top: 24px; }
+  .review-page__title { font-size: 32px; letter-spacing: -0.6px; }
+  .review-page__lead { font-size: 15px; }
+  .review__product { padding: 18px 16px; gap: 12px; }
+  .review__product .foto { width: 60px; height: 60px; }
+  .review__product-text h2 { font-size: 16px; }
+  .field { padding: 20px 16px; }
+  .dropzone { padding: 28px 16px; }
+  .thumbs:not([hidden]) { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .thumb, .thumb__img, .thumbs__add { width: auto; }
+  .thumb__img, .thumbs__add { height: auto; aspect-ratio: 1 / 1; }
+  .thumbs__add { gap: 4px; font-size: 12.5px; text-align: center; }
+  .thumb__name { font-size: 11.5px; }
+  .submitbar { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
+  .submitbar__btn { width: 100%; }
+  .order-items__head, .order-items__list li, .order-items__note { padding-left: 16px; padding-right: 16px; }
+}

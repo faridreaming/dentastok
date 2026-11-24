@@ -1,0 +1,66 @@
+/* 11 - Ulasan Terkirim */
+
+/* Header: "Riwayat pesanan" aktif, karena ulasan bagian dari riwayat */
+.mainbar__link[href="riwayat.html"] { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 6px; font-weight: 600; color: var(--ink); }
+.mainbar__link[href="riwayat.html"]::after { content: ""; align-self: stretch; height: 2px; background: var(--brand); }
+
+.sent { display: flex; flex-direction: column; align-items: center; gap: 24px; padding-top: 32px; padding-bottom: 96px; }
+
+/* Jejak navigasi */
+.crumbs { align-self: stretch; }
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; color: var(--ink-2); }
+.crumbs li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.crumbs li + li::before { content: ""; width: 14px; height: 14px; background: url("../assets/icons/chev-right.svg") center / 14px 14px no-repeat; }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 500; }
+
+.sent__panel { width: 760px; max-width: 100%; }
+
+.sent__top { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 40px 40px 32px; }
+.sent__mark { width: 56px; height: 56px; border-radius: 28px; background: #e4f0ea; display: flex; align-items: center; justify-content: center; }
+.sent__mark img { width: 28px; height: 28px; }
+.sent__title { font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.48px; }
+.sent__lead { font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+.sent__wait { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.sent__wait img { width: 16px; height: 16px; flex: none; }
+
+/* Pratinjau ulasan */
+.sent__preview { display: flex; flex-direction: column; gap: 14px; padding: 28px 40px; background: var(--canvas); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sent__preview-label { font-size: 13px; font-weight: 500; line-height: 1.5; color: var(--muted); }
+
+.review-card { display: flex; flex-direction: column; gap: 14px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.review-card__head { display: flex; align-items: center; gap: 12px; }
+.review-card__avatar { width: 40px; height: 40px; border-radius: 20px; flex: none; background: #e4f0ea; color: var(--brand); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.review-card__who { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.review-card__name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.review-card__name strong { font-size: 15px; font-weight: 600; }
+.review-card__verified { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; background: #e4f0ea; color: var(--brand); font-size: 12px; font-weight: 500; white-space: nowrap; }
+.review-card__verified img { width: 12px; height: 12px; }
+.review-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 13px; color: var(--muted); }
+.review-card__meta img { width: 87px; height: 15px; flex: none; }
+.review-card__text { font-size: 15px; line-height: 1.6; }
+.review-card__photos { display: flex; gap: 10px; }
+.review-card__photos .foto { width: 96px; height: 96px; }
+.review-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.review-card__tags li { padding: 4px 10px; border-radius: 6px; background: var(--tint); color: var(--ink-2); font-size: 13px; font-weight: 500; }
+
+/* Aksi */
+.sent__actions { display: flex; align-items: center; gap: 12px; padding: 24px 40px; }
+.sent__actions p { flex: 1 1 0; min-width: 0; font-size: 14.5px; color: var(--ink-2); }
+.sent__actions .btn { height: 46px; }
+
+@media (max-width: 760px) {
+  .mainbar__link[href="riwayat.html"] { display: none; }
+  .sent { padding-top: 24px; padding-bottom: 56px; }
+  .sent__top { padding: 28px 20px 24px; }
+  .sent__title { font-size: 28px; }
+  .sent__lead { font-size: 15px; }
+  .sent__preview { padding: 20px; }
+  .review-card { padding: 16px; }
+  .review-card__head { align-items: flex-start; }
+  .review-card__photos { gap: 8px; }
+  .review-card__photos .foto { width: auto; height: auto; flex: 1 1 0; aspect-ratio: 1 / 1; max-width: 96px; }
+  .sent__actions { flex-wrap: wrap; padding: 20px; }
+  .sent__actions p { flex-basis: 100%; }
+  .sent__actions .btn { flex: 1 1 auto; }
+}

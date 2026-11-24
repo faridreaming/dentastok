@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout: DentaStok</title>
+  <meta name="description" content="Isi alamat pengiriman lab, pilih kurir dan metode pembayaran, lalu bayar pesanan DentaStok.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/checkout.js" defer></script>
+</head>
+<body>
+  <div data-site-header data-cart="3"></div>
+
+  <main class="wrap page co">
+    <div class="co__title">
+      <h1>Checkout</h1>
+      <ol class="steps" aria-label="Langkah checkout">
+        <li class="steps__item is-done"><a href="keranjang.html"><span class="steps__dot"><img src="assets/icons/check-white.svg" width="14" height="14" alt=""></span><span class="steps__label">Keranjang<span class="sr-only">, selesai</span></span></a></li>
+        <li class="steps__line is-done" aria-hidden="true"></li>
+        <li class="steps__item is-current" aria-current="step"><span class="steps__dot">2</span><span class="steps__label">Checkout</span></li>
+        <li class="steps__line" aria-hidden="true"></li>
+        <li class="steps__item"><span class="steps__dot">3</span><span class="steps__label">Selesai</span></li>
+      </ol>
+    </div>
+
+    <form class="co__body" id="checkout-form" action="pembayaran-berhasil.html" data-checkout-form>
+      <div class="co__form">
+        <section class="panel co-card" aria-labelledby="alamat">
+          <div class="co-card__head">
+            <h2 id="alamat">Alamat pengiriman</h2>
+            <a class="co-card__link" href="#nama-lab">Pakai alamat lain</a>
+          </div>
+          <div class="co-card__fields">
+            <div class="field-row">
+              <div class="field">
+                <label for="nama-lab">Nama laboratorium</label>
+                <input id="nama-lab" name="nama_lab" type="text" value="Lab Gigi Sejahtera" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="penerima">Nama penerima</label>
+                <input id="penerima" name="penerima" type="text" value="Andi Pratama" autocomplete="name" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="wa">Nomor WhatsApp</label>
+                <input id="wa" name="whatsapp" type="tel" value="0812 3456 7890" autocomplete="tel" inputmode="tel" pattern="[0-9+ \-]{9,18}" required>
+              </div>
+              <div class="field">
+                <label for="zona">Kota dan zona ongkir</label>
+                <select id="zona" name="zona" required>
+                  <option value="medan-kota" selected>Medan Kota, zona 1</option>
+                  <option value="medan-baru">Medan Baru, zona 1</option>
+                  <option value="deli-serdang">Deli Serdang, zona 2</option>
+                  <option value="binjai">Binjai, zona 2</option>
+                  <option value="luar">Luar Sumatera Utara, zona 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="alamat-lengkap">Alamat lengkap</label>
+              <input id="alamat-lengkap" name="alamat" type="text" value="Jl. Sei Batang Hari No. 12, Medan Baru, 20154" autocomplete="street-address" required>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="alamat_utama" checked>
+              <span>Simpan sebagai alamat utama lab</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel co-card" aria-labelledby="kirim">
+          <div class="co-card__head"><h2 id="kirim">Metode pengiriman</h2></div>
+          <div class="options" role="radiogroup" aria-labelledby="kirim">
+            <label class="option">
+              <input type="radio" name="kirim" value="instan" data-cost="25000" data-label="kurir instan" checked required>
+              <span class="option__text"><strong>Kurir instan dalam kota</strong><span>Tiba hari ini, 17.00 sampai 20.00</span></span>
+              <span class="option__price">Rp 25.000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="kirim" value="reguler" data-cost="15000" data-label="reguler Medan">
+              <span class="option__text"><strong>Reguler Medan dan sekitarnya</strong><span>Tiba besok</span></span>
+              <span class="option__price">Rp 15.000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="kirim" value="ekspedisi" data-cost="32000" data-label="ekspedisi">
+              <span class="option__text"><strong>Ekspedisi luar zona</strong><span>2 sampai 4 hari kerja</span></span>
+              <span class="option__price">Rp 32.000</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel co-card" aria-labelledby="bayar">
+          <div class="co-card__head"><h2 id="bayar">Metode pembayaran</h2></div>
+          <div class="options" role="radiogroup" aria-labelledby="bayar">
+            <label class="option">
+              <input type="radio" name="bayar" value="va" checked required>
+              <span class="option__text">
+                <strong>Virtual account</strong>
+                <span>Konfirmasi otomatis, tanpa unggah bukti transfer</span>
+                <span class="banks"><span>BCA</span><span>BNI</span><span>BRI</span><span>Mandiri</span></span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="bayar" value="qris">
+              <span class="option__text"><strong>QRIS</strong><span>Bayar dari aplikasi bank atau dompet digital</span></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="bayar" value="tempo">
+              <span class="option__text"><strong>Tempo 14 hari</strong><span>Khusus lab langganan, faktur dibayar paling lambat 14 hari</span></span>
+            </label>
+          </div>
+        </section>
+      </div>
+
+      <aside class="panel co-sum" aria-labelledby="ringkasan">
+        <div class="co-sum__head">
+          <h2 id="ringkasan">Ringkasan pesanan</h2>
+          <span>3 produk</span>
+        </div>
+        <ul class="co-sum__items">
+          <li>
+            <div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone 5 kg" style="left:-88.46%;top:-138.75%;width:192.31%;height:258.56%"></div>
+            <div class="co-sum__text"><strong>Gips Tipe IV Die Stone 5 kg, Golden</strong><span>2 × Rp 185.000</span></div>
+            <span class="co-sum__amount">Rp 370.000</span>
+          </li>
+          <li>
+            <div class="foto"><img src="assets/img/wax.jpg" alt="Wax Sheet 0,5 mm" style="left:-48.44%;top:-7.81%;width:156.25%;height:156.25%"></div>
+            <div class="co-sum__text"><strong>Wax Sheet 0,5 mm, isi 250 g</strong><span>3 × Rp 95.000</span></div>
+            <span class="co-sum__amount">Rp 285.000</span>
+          </li>
+          <li>
+            <div class="foto"><img src="assets/img/pmma.jpg" alt="Disk PMMA 98 mm" style="left:-16.67%;top:0;width:133.33%;height:100%"></div>
+            <div class="co-sum__text"><strong>Disk PMMA 98 mm, shade A2</strong><span>1 × Rp 420.000</span></div>
+            <span class="co-sum__amount">Rp 420.000</span>
+          </li>
+        </ul>
+        <hr class="co-sum__line">
+        <div class="co-sum__row"><span>Subtotal</span><strong data-subtotal="1075000">Rp 1.075.000</strong></div>
+        <div class="co-sum__row"><span data-ship-label>Ongkos kirim, kurir instan</span><strong data-ship>Rp 25.000</strong></div>
+        <div class="co-sum__row"><span>Diskon langganan lab</span><strong class="co-sum__discount" data-discount="50000">-Rp 50.000</strong></div>
+        <hr class="co-sum__line">
+        <div class="co-sum__total"><span>Total bayar</span><strong data-total>Rp 1.050.000</strong></div>
+        <button class="btn btn--primary btn--block co-sum__pay" type="submit" data-pay>Bayar Rp 1.050.000</button>
+        <p class="co-sum__secure"><img src="assets/icons/lock.svg" width="15" height="15" alt="">Pembayaran diproses aman oleh Midtrans</p>
+        <p class="co-sum__terms">Dengan membayar, Anda menyetujui syarat pembelian DentaStok.</p>
+      </aside>
+    </form>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

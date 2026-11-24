@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftarkan lab Anda di DentaStok</title>
+  <meta name="description" content="Daftarkan laboratorium atau klinik gigi Anda di DentaStok. Gratis dan cukup sekali, lalu stok dan harga langsung terlihat di katalog.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-body">
+  <header class="auth-bar">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="DentaStok, beranda">DentaStok<img src="assets/icons/logo-mark.svg" width="7" height="13" alt=""></a>
+      <p class="auth-bar__note">Sudah punya akun?</p>
+      <a class="auth-link" href="masuk.html">Masuk</a>
+    </div>
+  </header>
+
+  <main class="wrap auth auth--daftar">
+    <form class="auth-card auth-card--daftar" action="masuk.html" method="get" data-auth-form data-next="masuk.html?daftar=1">
+      <div class="auth-card__head">
+        <h1 class="auth-card__title">Daftarkan lab Anda</h1>
+        <p class="auth-card__lead">Gratis dan cukup sekali. Data ini dipakai untuk alamat kirim dan faktur.</p>
+      </div>
+
+      <fieldset class="field">
+        <legend class="field__label">Jenis usaha</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="jenis" value="lab" checked required>
+            <span class="choice__text"><strong>Laboratorium gigi</strong><span>Membuat crown, gigi tiruan, dan model</span></span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="jenis" value="klinik">
+            <span class="choice__text"><strong>Klinik atau praktik dokter gigi</strong><span>Membeli bahan untuk tindakan di klinik</span></span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="field__label" for="nama-lab" data-nama-label>Nama laboratorium</label>
+          <div class="input"><input id="nama-lab" name="nama_lab" type="text" autocomplete="organization" value="Lab Gigi Sejahtera" required></div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="penanggung-jawab">Nama penanggung jawab</label>
+          <div class="input"><input id="penanggung-jawab" name="penanggung_jawab" type="text" autocomplete="name" value="Andi Pratama" required></div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="field__label" for="wa">Nomor WhatsApp</label>
+          <div class="input"><input id="wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" value="0812 3456 7890" required></div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="email">Email</label>
+          <div class="input"><input id="email" name="email" type="email" autocomplete="email" value="lab.sejahtera@gmail.com" required></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="zona">Kota dan zona ongkir</label>
+        <div class="input input--select">
+          <select id="zona" name="zona" required>
+            <option selected>Medan Kota, zona 1</option>
+            <option>Medan Baru, zona 1</option>
+            <option>Medan Johor, zona 1</option>
+            <option>Deli Serdang, zona 2</option>
+            <option>Binjai, zona 2</option>
+            <option>Luar Medan, zona 3</option>
+          </select>
+          <img src="assets/icons/chev-down.svg" width="16" height="16" alt="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="sandi-baru">Kata sandi</label>
+        <div class="input">
+          <input id="sandi-baru" name="sandi" type="password" autocomplete="new-password" minlength="8" value="Sejahtera24" aria-describedby="sandi-hint" required data-strength-input>
+          <button class="input__eye" type="button" data-toggle-password="sandi-baru" aria-pressed="false" aria-label="Tampilkan kata sandi"><img src="assets/icons/eye.svg" width="18" height="18" alt=""></button>
+        </div>
+        <p class="strength" id="sandi-hint">
+          <span class="meter" data-level="ok" data-strength-meter aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+          <span class="strength__label" data-strength-label aria-live="polite">Kuat</span>
+          <span class="strength__hint">Minimal 8 karakter, gabungan huruf dan angka</span>
+        </p>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" name="setuju" checked required>
+        <span>Saya setuju dengan syarat pembelian dan kebijakan privasi DentaStok.</span>
+      </label>
+
+      <button class="btn btn--primary btn--lg btn--block auth-card__submit" type="submit">Buat akun</button>
+
+      <p class="auth-card__switch">Sudah punya akun? <a class="auth-link" href="masuk.html">Masuk</a></p>
+    </form>
+
+    <section class="auth-aside" aria-labelledby="langkah">
+      <h2 class="auth-aside__title" id="langkah">Tiga langkah sampai bisa memesan</h2>
+      <ol class="auth-list">
+        <li>
+          <span class="auth-list__mark auth-list__mark--num" aria-hidden="true">1</span>
+          <div class="auth-list__text"><strong>Isi data lab</strong><span>Nama, kontak, dan zona ongkir untuk alamat kirim.</span></div>
+        </li>
+        <li>
+          <span class="auth-list__mark auth-list__mark--num" aria-hidden="true">2</span>
+          <div class="auth-list__text"><strong>Verifikasi WhatsApp</strong><span>Kode 6 angka dikirim ke nomor yang Anda isi.</span></div>
+        </li>
+        <li>
+          <span class="auth-list__mark auth-list__mark--num" aria-hidden="true">3</span>
+          <div class="auth-list__text"><strong>Mulai memesan</strong><span>Stok dan harga langsung terlihat di katalog.</span></div>
+        </li>
+      </ol>
+      <p class="auth-note"><img src="assets/icons/info.svg" width="18" height="18" alt="">Harga langganan aktif otomatis setelah lab Anda memesan tiga kali.</p>
+    </section>
+  </main>
+
+  <footer class="auth-foot">
+    <div class="wrap">
+      <span>© 2026 DentaStok, Medan</span>
+      <span>Butuh bantuan? WhatsApp 0812 3456 7890</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* 12 - Pembayaran Berhasil */
+/* Keranjang sudah dibayar, jadi header tidak menampilkan jumlah barang (sesuai mockup). */
+.paid .cart-btn__count { display: none; }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 2px; }
+.btn:focus-visible, .cart-btn:focus-visible { border-radius: var(--radius-sm); }
+
+.page.done { padding-top: 40px; padding-bottom: 96px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+
+/* Langkah checkout, semua selesai */
+.steps { display: flex; align-items: center; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.steps__item { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.steps__item.is-current { font-weight: 600; }
+.steps__dot { width: 26px; height: 26px; flex: none; border-radius: 13px; display: flex; align-items: center; justify-content: center; background: var(--brand); }
+.steps__dot img { width: 14px; height: 14px; }
+.steps__line { width: 56px; height: 1.5px; flex: none; border-radius: 1px; background: var(--brand); }
+
+/* Panel bukti pembayaran */
+.receipt { width: 760px; max-width: 100%; }
+.receipt__head { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 40px 40px 28px; }
+.receipt__badge { width: 56px; height: 56px; border-radius: 28px; display: flex; align-items: center; justify-content: center; background: #e4f0ea; }
+.receipt__badge img { width: 28px; height: 28px; }
+.receipt__head h1 { font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.48px; }
+.receipt__head p { font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+
+.receipt__rows { margin: 0; padding: 0 40px 8px; font-size: 14.5px; line-height: 1.5; }
+.receipt__rows div { display: flex; align-items: flex-start; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.receipt__rows dt { width: 200px; flex: none; color: var(--ink-2); }
+.receipt__rows dd { flex: 1 1 0; min-width: 0; margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+
+.receipt__items { display: flex; align-items: center; gap: 12px; padding: 20px 40px; background: var(--canvas); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.receipt__photos { display: flex; gap: 12px; flex: none; }
+.receipt__photos .foto { width: 52px; height: 52px; }
+.receipt__items p { flex: 1 1 0; min-width: 0; font-size: 14.5px; color: var(--ink-2); }
+
+.receipt__actions { display: flex; align-items: center; gap: 12px; padding: 24px 40px; }
+.receipt__save { flex: 1 1 0; min-width: 0; text-align: left; font-size: 14.5px; font-weight: 500; line-height: 1.5; color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.receipt__btn { height: 46px; }
+
+/* Responsif */
+@media (max-width: 760px) {
+  .page.done { padding-top: 28px; padding-bottom: 56px; gap: 20px; }
+  .steps { gap: 8px; }
+  .steps__item { gap: 8px; font-size: 13.5px; }
+  .steps__line { width: 20px; }
+  .receipt__head { padding: 28px 20px 20px; }
+  .receipt__head h1 { font-size: 26px; letter-spacing: -0.3px; }
+  .receipt__head p { font-size: 15px; }
+  .receipt__rows { padding: 0 20px 8px; }
+  .receipt__rows div { flex-direction: column; gap: 2px; }
+  .receipt__rows dt { width: auto; font-size: 13.5px; }
+  .receipt__items { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
+  .receipt__actions { flex-direction: column; align-items: stretch; padding: 20px; }
+  .receipt__save { padding-bottom: 4px; }
+  .receipt__btn { width: 100%; }
+}
+@media (max-width: 420px) {
+  .steps__item:not(.is-current) .steps__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}

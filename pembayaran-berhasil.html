@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pembayaran berhasil: DentaStok</title>
+  <meta name="description" content="Pembayaran pesanan DentaStok berhasil. Pesanan sedang dikemas di gudang Medan dan faktur dikirim ke email lab.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pembayaran-berhasil.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/pembayaran-berhasil.js" defer></script>
+</head>
+<body class="paid">
+  <div data-site-header data-cart="0"></div>
+
+  <main class="wrap page done">
+    <ol class="steps" aria-label="Langkah checkout">
+      <li class="steps__item"><span class="steps__dot"><img src="assets/icons/check-white.svg" width="14" height="14" alt=""></span><span class="steps__label">Keranjang<span class="sr-only">, selesai</span></span></li>
+      <li class="steps__line" aria-hidden="true"></li>
+      <li class="steps__item"><span class="steps__dot"><img src="assets/icons/check-white.svg" width="14" height="14" alt=""></span><span class="steps__label">Checkout<span class="sr-only">, selesai</span></span></li>
+      <li class="steps__line" aria-hidden="true"></li>
+      <li class="steps__item is-current" aria-current="step"><span class="steps__dot"><img src="assets/icons/check-white.svg" width="14" height="14" alt=""></span><span class="steps__label">Selesai</span></li>
+    </ol>
+
+    <section class="panel receipt" aria-labelledby="berhasil">
+      <div class="receipt__head">
+        <span class="receipt__badge"><img src="assets/icons/check-green-2.svg" width="28" height="28" alt=""></span>
+        <h1 id="berhasil">Pembayaran berhasil</h1>
+        <p>Terima kasih, Lab Gigi Sejahtera. Pesanan sedang dikemas di gudang Medan dan dikirim hari ini.</p>
+      </div>
+
+      <dl class="receipt__rows">
+        <div><dt>Nomor pesanan</dt><dd class="mono">INV/2026/09/0162</dd></div>
+        <div><dt>Total dibayar</dt><dd>Rp 1.050.000</dd></div>
+        <div><dt>Metode pembayaran</dt><dd>Virtual account BCA</dd></div>
+        <div><dt>Pengiriman</dt><dd>Kurir instan, tiba hari ini 17.00 sampai 20.00</dd></div>
+        <div><dt>Faktur</dt><dd>Dikirim ke lab.sejahtera@gmail.com</dd></div>
+      </dl>
+
+      <div class="receipt__items">
+        <div class="receipt__photos">
+          <div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone 5 kg" style="left:-88.46%;top:-138.75%;width:192.31%;height:258.56%"></div>
+          <div class="foto"><img src="assets/img/wax.jpg" alt="Wax Sheet 0,5 mm" style="left:-48.44%;top:-7.81%;width:156.25%;height:156.25%"></div>
+          <div class="foto"><img src="assets/img/pmma.jpg" alt="Disk PMMA 98 mm" style="left:-16.67%;top:0;width:133.33%;height:100%"></div>
+        </div>
+        <p>Gips Tipe IV 5 kg (2), Wax Sheet 0,5 mm (3), Disk PMMA 98 mm (1)</p>
+      </div>
+
+      <div class="receipt__actions">
+        <button class="receipt__save" type="button" data-save-list>Simpan sebagai daftar rutin</button>
+        <a class="btn btn--secondary receipt__btn" href="index.html">Kembali belanja</a>
+        <a class="btn btn--primary receipt__btn" href="riwayat.html">Lihat riwayat pesanan<img src="assets/icons/arrow-white.svg" width="16" height="16" alt=""></a>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

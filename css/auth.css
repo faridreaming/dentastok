@@ -1,0 +1,119 @@
+/* 07 - Masuk dan 08 - Daftar: header sederhana, form di kiri, panel manfaat di kanan */
+
+/* ---------- Header sederhana ---------- */
+.auth-bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.auth-bar .wrap { display: flex; align-items: center; gap: 12px; min-height: 140px; padding-top: 20px; padding-bottom: 20px; }
+.auth-bar .logo { margin-right: auto; }
+.auth-bar__note { font-size: 14.5px; color: var(--ink-2); white-space: nowrap; }
+.auth-link { font-weight: 500; font-size: 14.5px; color: var(--brand); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.auth-link:hover { color: #164d39; }
+
+/* ---------- Kerangka konten ---------- */
+.auth { display: flex; align-items: flex-start; justify-content: center; gap: 88px; padding-top: 72px; padding-bottom: 120px; }
+.auth--daftar { gap: 72px; padding-top: 64px; }
+
+/* ---------- Kartu form ---------- */
+.auth-card { width: 480px; flex: none; display: flex; flex-direction: column; gap: 20px; padding: 36px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.auth-card--daftar { width: 600px; }
+.auth-card__head { display: flex; flex-direction: column; gap: 20px; }
+.auth-card--masuk .auth-card__head { margin-bottom: 24px; } /* Figma: spacer 4 px di antara dua gap 20 px */
+.auth-card__title { font-size: 30px; font-weight: 600; line-height: 1.2; letter-spacing: -0.45px; }
+.auth-card__lead { font-size: 15.5px; line-height: 1.55; color: var(--ink-2); }
+.auth-card__submit { font-size: 15.5px; }
+.auth-card__alt { height: 48px; font-size: 15px; }
+.auth-card__switch { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding-top: 6px; font-size: 14.5px; color: var(--ink-2); }
+
+/* ---------- Field ---------- */
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.field__label { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--ink-2); padding: 0; }
+legend.field__label { margin-bottom: 8px; }
+.field__row { display: flex; align-items: center; gap: 8px; }
+.field__row .field__label { flex: 1; }
+.field__aside { font-size: 13.5px; font-weight: 500; color: var(--brand); white-space: nowrap; }
+.field__aside:hover { text-decoration: underline; text-underline-offset: 2px; }
+.field-row { display: flex; gap: 16px; }
+.field-row > .field { flex: 1 1 0; }
+
+.input { position: relative; display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); transition: border-color .15s, box-shadow .15s; }
+.input:focus-within { border-color: var(--brand); box-shadow: inset 0 0 0 .5px var(--brand); }
+.input input, .input select { flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; outline: 0; background: transparent; font-size: 15px; line-height: 1.5; color: var(--ink); }
+.input input::placeholder { color: var(--muted); opacity: 1; }
+.input--select select { -webkit-appearance: none; appearance: none; cursor: pointer; padding-right: 26px; margin-right: -26px; }
+.input--select img { width: 16px; height: 16px; flex: none; pointer-events: none; }
+
+/* Tombol lihat/sembunyikan kata sandi: garis miring saat kata sandi terlihat */
+.input__eye { position: relative; flex: none; width: 30px; height: 30px; margin-right: -6px; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; }
+.input__eye img { width: 18px; height: 18px; }
+.input__eye::after { content: ""; position: absolute; left: 50%; top: 50%; width: 18px; height: 1.5px; border-radius: 1px; background: var(--muted); transform: translate(-50%, -50%) rotate(-45deg) scaleX(0); transition: transform .15s; }
+.input__eye[aria-pressed="true"]::after { transform: translate(-50%, -50%) rotate(-45deg) scaleX(1); }
+.input__eye:hover { background: var(--tint); }
+
+/* Kekuatan kata sandi */
+.strength { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 13px; line-height: 1.5; }
+.strength__label { font-weight: 500; color: var(--ink-2); }
+.strength__hint { color: var(--muted); }
+
+/* ---------- Centang dan pilihan radio ---------- */
+.check { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--ink); cursor: pointer; }
+.check input { -webkit-appearance: none; appearance: none; flex: none; width: 18px; height: 18px; margin: 2px 0 0; background: var(--surface) center / 14px 14px no-repeat; border: 1.25px solid #9aa39e; border-radius: 4px; cursor: pointer; }
+.check input:checked { background-color: var(--brand); background-image: url("../assets/icons/check-white.svg"); border-color: var(--brand); }
+
+.choices { display: flex; gap: 12px; }
+.choice { flex: 1 1 0; min-width: 0; display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.choice:hover { border-color: var(--ink-2); }
+.choice:has(input:checked) { background: var(--tint); border: 1.5px solid var(--brand); }
+.choice input { -webkit-appearance: none; appearance: none; flex: none; width: 20px; height: 20px; margin: 1px 0 0; background: var(--surface); border: 1.25px solid #9aa39e; border-radius: 50%; cursor: pointer; }
+.choice input:checked { border: 1.5px solid var(--brand); background: radial-gradient(circle, var(--brand) 0 4.6px, var(--surface) 5px); }
+.choice__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.5; }
+.choice__text strong { font-size: 14.5px; font-weight: 500; color: var(--ink); line-height: 22px; white-space: nowrap; }
+.choice__text span { font-size: 13px; line-height: 20px; color: var(--ink-2); }
+
+/* ---------- Pemisah "atau" ---------- */
+.auth-divider { display: flex; align-items: center; gap: 12px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* ---------- Panel manfaat ---------- */
+.auth-aside { width: 420px; flex: none; display: flex; flex-direction: column; gap: 22px; padding-top: 40px; }
+.auth-aside__title { font-size: 20px; font-weight: 600; line-height: 1.32; letter-spacing: -0.1px; }
+.auth-list { display: flex; flex-direction: column; gap: 22px; margin: 0; padding: 0; list-style: none; }
+.auth-list li { display: flex; align-items: flex-start; gap: 14px; }
+.auth-list__mark { flex: none; width: 28px; height: 28px; border-radius: 14px; background: #e4f0ea; display: inline-flex; align-items: center; justify-content: center; }
+.auth-list__mark img { width: 15px; height: 15px; }
+.auth-list__mark--num { background: var(--brand); color: #fff; font-size: 13px; font-weight: 600; line-height: 1.5; }
+.auth-list__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; padding-top: 3px; }
+.auth-list__text strong { font-size: 15.5px; font-weight: 600; line-height: 1.5; }
+.auth-list__text span { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+.auth-note { display: flex; align-items: flex-start; gap: 10px; padding: 16px; background: var(--tint); border-radius: var(--radius); font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+.auth-note img { width: 18px; height: 18px; flex: none; }
+
+/* ---------- Footer sederhana ---------- */
+.auth-foot { background: var(--surface); border-top: 1px solid var(--line); }
+.auth-foot .wrap { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 24px; padding-bottom: 24px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+/* ---------- Fokus ---------- */
+.auth-bar a:focus-visible, .auth a:focus-visible, .auth button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.check input:focus-visible, .choice input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* ---------- Responsif ---------- */
+@media (max-width: 1100px) {
+  .auth, .auth--daftar { flex-direction: column; align-items: center; gap: 40px; padding-top: 48px; padding-bottom: 88px; }
+  .auth-card, .auth-card--daftar { width: 100%; max-width: 600px; }
+  .auth-aside { width: 100%; max-width: 600px; padding-top: 0; }
+}
+@media (max-width: 760px) {
+  .auth-bar .wrap { min-height: 64px; padding-top: 12px; padding-bottom: 12px; gap: 8px; }
+  .auth-bar__note, .auth-link { font-size: 14px; }
+  .auth, .auth--daftar { padding-top: 24px; padding-bottom: 56px; gap: 32px; }
+  .auth-card { padding: 24px 20px; }
+  .auth-card__title { font-size: 26px; }
+  .auth-card__lead { font-size: 15px; }
+  .auth-aside__title { font-size: 19px; }
+  .auth-foot .wrap { flex-direction: column; align-items: flex-start; padding-top: 20px; padding-bottom: 20px; }
+}
+@media (max-width: 640px) {
+  .choices { flex-direction: column; }
+  .choice__text strong { white-space: normal; }
+}
+@media (max-width: 560px) {
+  .field-row { flex-direction: column; gap: 20px; }
+}

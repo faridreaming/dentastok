@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gips: katalog bahan lab gigi | DentaStok</title>
+  <meta name="description" content="Dental stone dan plaster untuk model kerja, model studi, dan die. Cek stok gudang Medan dan pesan langsung dari katalog DentaStok.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/katalog.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/katalog.js" defer></script>
+</head>
+<body>
+  <div data-site-header data-active="gips" data-cart="3"></div>
+
+  <main class="wrap page katalog">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Beranda</a></li>
+        <li><img src="assets/icons/chev-right.svg" width="14" height="14" alt=""><a href="katalog.html">Katalog</a></li>
+        <li><img src="assets/icons/chev-right.svg" width="14" height="14" alt=""><span aria-current="page">Gips</span></li>
+      </ol>
+    </nav>
+
+    <div class="katalog__intro">
+      <div class="katalog__heading">
+        <h1>Gips</h1>
+        <span>24 produk</span>
+      </div>
+      <p>Dental stone dan plaster untuk model kerja, model studi, dan die. Semua stok tersimpan di gudang Medan.</p>
+    </div>
+
+    <div class="katalog__body">
+      <form class="panel filter" aria-labelledby="filter-title" data-filter>
+        <div class="filter__head">
+          <h2 id="filter-title">Filter</h2>
+          <button class="filter__reset" type="reset">Atur ulang</button>
+          <button class="filter__toggle" type="button" aria-expanded="false" aria-controls="filter-groups" data-filter-toggle>Tampilkan filter</button>
+        </div>
+
+        <div class="filter__groups" id="filter-groups">
+          <fieldset class="filter__group">
+            <legend>Kategori</legend>
+            <div class="filter__opts">
+              <label class="filter__opt"><input type="checkbox" name="kategori" value="gips" checked><span>Gips</span><span class="mono">24</span></label>
+              <label class="filter__opt"><input type="checkbox" name="kategori" value="wax"><span>Wax</span><span class="mono">31</span></label>
+              <label class="filter__opt"><input type="checkbox" name="kategori" value="bur"><span>Bur &amp; Disk</span><span class="mono">18</span></label>
+              <label class="filter__opt"><input type="checkbox" name="kategori" value="pmma"><span>PMMA &amp; Zirkonia</span><span class="mono">14</span></label>
+              <label class="filter__opt"><input type="checkbox" name="kategori" value="cetak"><span>Bahan Cetak</span><span class="mono">12</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>Tipe gips</legend>
+            <div class="filter__opts">
+              <label class="filter__opt"><input type="checkbox" name="tipe" value="ii"><span>Tipe II, plaster</span><span class="mono">4</span></label>
+              <label class="filter__opt"><input type="checkbox" name="tipe" value="iii"><span>Tipe III, stone</span><span class="mono">8</span></label>
+              <label class="filter__opt"><input type="checkbox" name="tipe" value="iv"><span>Tipe IV, die stone</span><span class="mono">10</span></label>
+              <label class="filter__opt"><input type="checkbox" name="tipe" value="v"><span>Tipe V, ekspansi tinggi</span><span class="mono">2</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>Merek</legend>
+            <div class="filter__opts">
+              <label class="filter__opt"><input type="checkbox" name="merek" value="gipsona"><span>Gipsona</span><span class="mono">9</span></label>
+              <label class="filter__opt"><input type="checkbox" name="merek" value="kristalit"><span>Kristalit</span><span class="mono">8</span></label>
+              <label class="filter__opt"><input type="checkbox" name="merek" value="duralab"><span>Duralab</span><span class="mono">7</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter__group">
+            <legend>Ketersediaan</legend>
+            <div class="filter__opts">
+              <label class="filter__opt"><input type="checkbox" name="stok" value="ada"><span>Stok tersedia</span><span class="mono">19</span></label>
+              <label class="filter__opt"><input type="checkbox" name="stok" value="preorder"><span>Bisa pre-order</span><span class="mono">5</span></label>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+
+      <section class="results" aria-labelledby="hasil-title">
+        <h2 class="sr-only" id="hasil-title">Produk gips</h2>
+        <div class="results__bar">
+          <p class="results__count" aria-live="polite" data-result-count>Menampilkan 1 sampai 6 dari 24 produk</p>
+          <label class="results__sort-label" for="urutkan">Urutkan</label>
+          <select class="results__sort" id="urutkan" name="urutkan" data-sort>
+            <option value="populer">Paling sering dipesan</option>
+            <option value="murah">Harga terendah</option>
+            <option value="mahal">Harga tertinggi</option>
+            <option value="stok">Stok terbanyak</option>
+          </select>
+        </div>
+
+        <div class="results__grid" data-results>
+          <article class="card" data-tipe="iv" data-merek="gipsona" data-stok="ada" data-price="185000" data-qty="24">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone 5 kg, Golden" style="left:-88.46%;top:-275.07%;width:192.31%;height:445.31%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-IV-5G</span><span class="dot"></span><span>Gipsona</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Tipe IV Die Stone 5 kg, Golden</a></h3>
+              <div class="price"><strong>Rp 185.000</strong><span>/ ember</span></div>
+              <div class="stock"><span class="meter" data-level="ok" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>24 tersedia</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe IV Die Stone 5 kg, Golden"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-tipe="iv" data-merek="kristalit" data-stok="ada" data-price="198000" data-qty="12">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone 5 kg, Biru" style="left:-88.46%;top:-39.06%;width:192.31%;height:445.31%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-IV-5B</span><span class="dot"></span><span>Kristalit</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Tipe IV Die Stone 5 kg, Biru</a></h3>
+              <div class="price"><strong>Rp 198.000</strong><span>/ ember</span></div>
+              <div class="stock"><span class="meter" data-level="ok" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>12 tersedia</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe IV Die Stone 5 kg, Biru"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-tipe="iii" data-merek="gipsona" data-stok="ada" data-price="142000" data-qty="31">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/model-gips.jpg" alt="Gips Tipe III Dental Stone 5 kg" style="left:-33.33%;top:-36.12%;width:166.67%;height:191.38%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-III-5</span><span class="dot"></span><span>Gipsona</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Tipe III Dental Stone 5 kg</a></h3>
+              <div class="price"><strong>Rp 142.000</strong><span>/ ember</span></div>
+              <div class="stock"><span class="meter" data-level="ok" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>31 tersedia</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe III Dental Stone 5 kg"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-tipe="ii" data-merek="duralab" data-stok="ada" data-price="118000" data-qty="5">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe II Plaster 10 kg" style="left:-1.92%;top:-119.22%;width:192.31%;height:445.31%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-II-10</span><span class="dot"></span><span>Duralab</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Tipe II Plaster 10 kg</a></h3>
+              <div class="price"><strong>Rp 118.000</strong><span>/ sak</span></div>
+              <div class="stock stock--low"><span class="meter" data-level="low" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span>Sisa 5</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe II Plaster 10 kg"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-tipe="v" data-merek="kristalit" data-stok="ada" data-price="265000" data-qty="3">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/model-gips.jpg" alt="Gips Tipe V Ekspansi Tinggi 3 kg" style="left:-75%;top:-93.54%;width:250%;height:287.07%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-V-3</span><span class="dot"></span><span>Kristalit</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Tipe V Ekspansi Tinggi 3 kg</a></h3>
+              <div class="price"><strong>Rp 265.000</strong><span>/ ember</span></div>
+              <div class="stock stock--low"><span class="meter" data-level="low" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span>Sisa 3</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe V Ekspansi Tinggi 3 kg"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-tipe="" data-merek="duralab" data-stok="preorder" data-price="156000" data-qty="0">
+            <a class="card__media" href="produk.html" tabindex="-1"><div class="foto"><img src="assets/img/gips.jpg" alt="Gips Ortodonti Putih 5 kg" style="left:-1.92%;top:-119.22%;width:192.31%;height:445.31%"></div></a>
+            <div class="card__body">
+              <div class="card__meta"><span class="mono">GP-OR-5</span><span class="dot"></span><span>Duralab</span></div>
+              <h3 class="card__name"><a href="produk.html">Gips Ortodonti Putih 5 kg</a></h3>
+              <div class="price"><strong>Rp 156.000</strong><span>/ ember</span></div>
+              <div class="stock stock--out"><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Habis, masuk 30 Sep</div>
+              <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-notify="Gips Ortodonti Putih 5 kg">Kabari saat tersedia</button></div>
+            </div>
+          </article>
+        </div>
+
+        <p class="results__empty" data-empty hidden>Tidak ada produk di halaman ini yang cocok dengan filter. Coba atur ulang filter.</p>
+
+        <nav class="pager" aria-label="Halaman katalog">
+          <a class="pager__num is-current" href="katalog.html" aria-current="page">1</a>
+          <a class="pager__num" href="katalog.html" aria-label="Halaman 2">2</a>
+          <a class="pager__num" href="katalog.html" aria-label="Halaman 3">3</a>
+          <a class="pager__num" href="katalog.html" aria-label="Halaman 4">4</a>
+          <a class="btn btn--secondary pager__next" href="katalog.html">Berikutnya<img src="assets/icons/arrow-ink.svg" width="16" height="16" alt=""></a>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

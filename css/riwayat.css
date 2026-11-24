@@ -1,0 +1,81 @@
+/* 06 - Riwayat Pesanan & Pesan Ulang */
+
+/* Header: "Riwayat pesanan" aktif di halaman ini */
+.mainbar__link[href="riwayat.html"] { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 6px; font-weight: 600; color: var(--ink); }
+.mainbar__link[href="riwayat.html"]::after { content: ""; align-self: stretch; height: 2px; background: var(--brand); }
+
+.history { display: flex; flex-direction: column; gap: 24px; padding-top: 40px; }
+
+.history__head { display: flex; flex-direction: column; gap: 8px; }
+.history__title { font-size: 40px; font-weight: 600; line-height: 1.08; letter-spacing: -0.8px; }
+.history__lead { font-size: 16px; color: var(--ink-2); }
+
+/* Tab status */
+.tabs { display: flex; align-items: flex-end; gap: 32px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { display: flex; flex-direction: column; gap: 12px; flex: none; color: var(--ink-2); font-size: 15.5px; }
+.tab::after { content: ""; height: 2px; background: var(--brand); opacity: 0; }
+.tab__label { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.tab__count { padding: 1px 7px; border-radius: 10px; background: var(--tint); color: var(--ink-2); font-size: 12.5px; font-weight: 500; }
+.tab:hover { color: var(--ink); }
+.tab.is-active { color: var(--ink); font-weight: 600; }
+.tab.is-active::after { opacity: 1; }
+.tab.is-active .tab__count { background: #e4f0ea; color: var(--brand); }
+
+/* Daftar pesanan */
+.orders { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+.orders__empty { padding: 32px 24px; text-align: center; color: var(--ink-2); }
+
+.order__head { display: flex; align-items: center; gap: 16px; padding: 18px 24px; }
+.order__id { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14.5px; }
+.order__id h2 { font-size: 14.5px; font-weight: 500; line-height: 1.5; }
+.order__id p { color: var(--ink-2); white-space: pre-wrap; }
+
+.status { display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; border-radius: 6px; font-size: 13.5px; font-weight: 500; white-space: nowrap; flex: none; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.status--sent { background: #e9eefa; color: #2d55b8; }
+.status--done { background: #e4f0ea; color: #1f6e4c; }
+
+.order__body { display: flex; align-items: center; gap: 24px; padding: 18px 24px; border-top: 1px solid var(--line); }
+.order__items { display: flex; align-items: center; gap: 8px; flex: none; }
+.order__items .foto { width: 56px; height: 56px; }
+.order__more { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--tint); display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 500; color: var(--ink-2); }
+.order__note { flex: 1 1 0; min-width: 0; font-size: 14.5px; color: var(--ink-2); }
+.order__actions { display: flex; align-items: center; gap: 10px; flex: none; }
+.order__actions .btn { height: 42px; }
+
+/* Lacak pengiriman */
+.track { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.track__steps { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; margin: 0; padding: 0; list-style: none; }
+.track__steps li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.track__steps li::before { content: ""; width: 10px; height: 10px; border-radius: 5px; background: var(--surface); border: 1.5px solid var(--line-strong); flex: none; }
+.track__steps li.is-done::before { background: #2d55b8; border: 0; }
+.track__steps li + li { position: relative; margin-left: 38px; }
+.track__steps li + li::after { content: ""; position: absolute; left: -38px; top: 50%; width: 28px; height: 1.5px; margin-top: -0.75px; border-radius: 1px; background: var(--line-strong); }
+.track__steps li.is-done + li.is-done::after { background: #2d55b8; }
+.track__steps strong { font-size: 14.5px; font-weight: 500; color: var(--ink); }
+.track__steps li:not(.is-done) strong { color: var(--muted); }
+.track__steps span { font-size: 13.5px; color: var(--muted); }
+.track__resi { font-size: 13px; color: var(--ink-2); }
+
+@media (max-width: 1024px) {
+  .order__body { flex-wrap: wrap; }
+  .order__actions { width: 100%; justify-content: flex-end; }
+}
+@media (max-width: 760px) {
+  .mainbar__link[href="riwayat.html"] { display: none; }
+  .history { padding-top: 32px; }
+  .history__title { font-size: 32px; letter-spacing: -0.6px; }
+  .history__lead { font-size: 15px; }
+  .tabs { gap: 24px; }
+  .order__head, .order__body { padding: 16px; }
+  .order__head { align-items: flex-start; }
+  .order__body { gap: 16px; }
+  .track__steps li + li { margin-left: 0; }
+  .track__steps li + li::after { content: none; }
+  .track__steps { flex-direction: column; align-items: flex-start; }
+  .order__note, .track { flex-basis: 100%; }
+  .order__actions { flex-wrap: wrap; }
+  .order__actions .btn { flex: 1 1 auto; }
+  .order__actions .btn--primary { flex-basis: 100%; }
+}

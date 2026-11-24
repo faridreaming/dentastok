@@ -1,0 +1,109 @@
+/* 05 - Checkout */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 2px; }
+.btn:focus-visible, .cart-btn:focus-visible { border-radius: var(--radius-sm); }
+
+.page.co { padding-top: 40px; display: flex; flex-direction: column; gap: 32px; }
+
+.co__title { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.co__title h1 { font-size: 40px; font-weight: 600; line-height: 1.08; letter-spacing: -0.8px; }
+
+/* Langkah checkout */
+.steps { display: flex; align-items: center; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.steps__item { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.steps__item a { display: flex; align-items: center; gap: inherit; }
+.steps__item a:hover { color: var(--brand); }
+.steps__dot { width: 26px; height: 26px; flex: none; border-radius: 13px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--line-strong); font-size: 13px; font-weight: 600; color: var(--muted); }
+.steps__dot img { width: 14px; height: 14px; }
+.steps__item.is-done, .steps__item.is-current { color: var(--ink); }
+.steps__item.is-current { font-weight: 600; }
+.steps__item.is-done .steps__dot, .steps__item.is-current .steps__dot { background: var(--brand); border-color: var(--brand); color: #fff; }
+.steps__line { width: 56px; height: 1.5px; flex: none; border-radius: 1px; background: var(--line-strong); }
+.steps__line.is-done { background: var(--brand); }
+
+.co__body { display: flex; align-items: flex-start; gap: 32px; }
+.co__form { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+
+/* Kartu formulir */
+.co-card__head { display: flex; align-items: center; gap: 12px; padding: 20px 24px 18px; }
+.co-card__head h2 { flex: 1 1 0; min-width: 0; font-size: 18px; font-weight: 600; line-height: 1.32; letter-spacing: -0.09px; }
+.co-card__link { font-size: 14px; font-weight: 500; color: var(--brand); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.co-card__fields { display: flex; flex-direction: column; gap: 16px; padding: 0 24px 24px; }
+
+.field-row { display: flex; gap: 16px; }
+.field-row .field { flex: 1 1 0; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label { font-size: 13.5px; font-weight: 500; line-height: 1.5; color: var(--ink-2); }
+.field input, .field select { width: 100%; height: 44px; padding: 0 14px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font-size: 14.5px; color: var(--ink); outline: 0; }
+.field select { appearance: none; -webkit-appearance: none; padding-right: 40px; background: var(--surface) url("../assets/icons/chev-down.svg") no-repeat right 14px center / 16px 16px; cursor: pointer; }
+.field input:focus, .field select:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(27, 94, 69, .12); }
+.field input:user-invalid { border-color: var(--danger); }
+
+.check { display: inline-flex; align-items: center; gap: 10px; padding-top: 2px; font-size: 14.5px; cursor: pointer; align-self: flex-start; }
+.check input { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; margin: 0; flex: none; border: 1.25px solid #9aa39e; border-radius: 4px; background: var(--surface) no-repeat center / 14px 14px; cursor: pointer; }
+.check input:checked { background-color: var(--brand); border-color: var(--brand); background-image: url("../assets/icons/check-white.svg"); }
+.check input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* Pilihan radio */
+.option { display: flex; align-items: flex-start; gap: 14px; padding: 16px 24px; border-top: 1px solid var(--line); cursor: pointer; transition: background-color .15s; }
+.option:hover { background: #f7f9f8; }
+.option:has(input:checked) { background: var(--tint); }
+.option input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; margin: 1px 0 0; flex: none; border: 1.25px solid #9aa39e; border-radius: 10px; background: var(--surface); cursor: pointer; }
+.option input:checked { border: 0; background: url("../assets/icons/radio-on.svg") no-repeat center / 20px 20px; }
+.option input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.option__text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; line-height: 1.5; }
+.option__text strong { font-size: 15px; font-weight: 500; }
+.option__text > span { font-size: 14px; color: var(--ink-2); }
+.option__price { font-size: 15px; font-weight: 500; line-height: 1.5; white-space: nowrap; }
+.banks { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 6px; }
+.banks span { padding: 3px 8px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 4px; font-size: 12.5px; font-weight: 500; line-height: 1.5; color: var(--ink-2); }
+
+/* Ringkasan pesanan */
+.co-sum { width: 420px; flex: none; display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+.co-sum__head { display: flex; align-items: baseline; gap: 8px; }
+.co-sum__head h2 { flex: 1 1 0; min-width: 0; font-size: 20px; font-weight: 600; line-height: 1.32; letter-spacing: -0.1px; }
+.co-sum__head span { font-size: 14.5px; color: var(--muted); white-space: nowrap; }
+.co-sum__items { display: flex; flex-direction: column; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.co-sum__items li { display: flex; align-items: center; gap: 12px; }
+.co-sum__items .foto { width: 52px; height: 52px; }
+.co-sum__text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.5; }
+.co-sum__text strong { font-size: 14px; font-weight: 500; }
+.co-sum__text span { font-size: 13.5px; color: var(--ink-2); }
+.co-sum__amount { font-size: 14.5px; font-weight: 500; white-space: nowrap; }
+.co-sum__line { width: 100%; height: 1px; margin: 0; border: 0; background: var(--line); }
+.co-sum__row { display: flex; align-items: center; gap: 12px; font-size: 14.5px; }
+.co-sum__row span { flex: 1 1 0; min-width: 0; color: var(--ink-2); }
+.co-sum__row strong { font-weight: 500; white-space: nowrap; }
+.co-sum__discount { color: #1f6e4c; }
+.co-sum__total { display: flex; align-items: baseline; gap: 12px; font-weight: 600; }
+.co-sum__total span { flex: 1 1 0; font-size: 16px; }
+.co-sum__total strong { font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.26px; white-space: nowrap; }
+.co-sum__pay { height: 56px; font-size: 16px; }
+.co-sum__secure { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); }
+.co-sum__secure img { width: 15px; height: 15px; flex: none; }
+.co-sum__terms { font-size: 13px; color: var(--muted); text-align: center; }
+
+/* Responsif */
+@media (max-width: 1200px) {
+  .co-sum { width: 380px; }
+}
+@media (max-width: 1024px) {
+  .co__body { flex-direction: column; align-items: stretch; }
+  .co__form { flex: none; }
+  .co-sum { width: 100%; }
+}
+@media (max-width: 760px) {
+  .page.co { padding-top: 28px; gap: 24px; }
+  .co__title h1 { font-size: 32px; letter-spacing: -0.6px; }
+  .steps { gap: 8px; }
+  .steps__item { gap: 8px; font-size: 13.5px; }
+  .steps__line { width: 20px; }
+  .co-card__head { padding: 16px 16px 14px; }
+  .co-card__fields { padding: 0 16px 20px; }
+  .field-row { flex-direction: column; }
+  .option { gap: 12px; padding: 14px 16px; }
+  .co-sum { padding: 20px 16px; }
+  .co-sum__total strong { font-size: 24px; }
+}
+@media (max-width: 420px) {
+  .steps__item:not(.is-current) .steps__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}

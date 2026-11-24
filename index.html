@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DentaStok: bahan lab dan klinik gigi, stok terlihat</title>
+  <meta name="description" content="Katalog bahan habis pakai untuk laboratorium dan klinik gigi. Cek stok gudang Medan, pesan dari ponsel, terima di hari yang sama.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/beranda.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <div data-site-header data-cart="3"></div>
+
+  <main class="wrap page home">
+    <section class="hero">
+      <div class="hero__copy">
+        <h1 class="hero__title">Stok bahan lab, terlihat sebelum Anda memesan.</h1>
+        <p class="hero__lead">Katalog khusus laboratorium dan klinik gigi. Cek ketersediaan di gudang Medan, pesan dari ponsel, dan terima di hari yang sama.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="katalog.html">Lihat katalog<img src="assets/icons/arrow-white.svg" width="16" height="16" alt=""></a>
+          <a class="link-underline" href="#">Cara memesan</a>
+        </div>
+      </div>
+
+      <div class="panel stockboard" aria-labelledby="stok-title">
+        <div class="stockboard__head">
+          <img src="assets/icons/dot-green.svg" width="8" height="8" alt="">
+          <h2 id="stok-title">Stok gudang Medan</h2>
+          <span>Diperbarui 09.40 WIB</span>
+        </div>
+        <div class="stockboard__row">
+          <span class="code">GP-IV-5G</span><span class="name">Gips Tipe IV Die Stone 5 kg</span>
+          <span class="meter" data-level="ok" aria-label="Stok banyak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+          <span class="qty">24</span>
+        </div>
+        <div class="stockboard__row">
+          <span class="code">WX-05</span><span class="name">Wax Sheet 0,5 mm</span>
+          <span class="meter" data-level="low" aria-label="Stok menipis"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span>
+          <span class="qty qty--low">6</span>
+        </div>
+        <div class="stockboard__row">
+          <span class="code">PM-98</span><span class="name">Disk PMMA 98 mm</span>
+          <span class="meter" data-level="low" aria-label="Stok menipis"><i class="on"></i><i></i><i></i><i></i><i></i></span>
+          <span class="qty qty--low">4</span>
+        </div>
+        <div class="stockboard__row">
+          <span class="code">BR-D10</span><span class="name">Bur Diamond Set 10 pcs</span>
+          <span class="meter" data-level="ok" aria-label="Stok cukup"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+          <span class="qty">18</span>
+        </div>
+        <div class="stockboard__row">
+          <span class="code">AL-01</span><span class="name">Alginat Normal Set 1 kg</span>
+          <span class="meter" aria-label="Stok habis"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="qty qty--out">0</span>
+        </div>
+        <div class="stockboard__foot">
+          <p>Jumlah diambil dari gudang, bukan perkiraan.</p>
+          <a class="link-arrow" href="katalog.html">Semua stok<img src="assets/icons/arrow-green.svg" width="16" height="16" alt=""></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pesan-ulang">
+      <div class="section__head">
+        <div class="section__titles">
+          <h2 class="section__title" id="pesan-ulang">Pesan ulang dari riwayat Anda</h2>
+          <p class="section__sub">Disusun dari pesanan Lab Gigi Sejahtera tiga bulan terakhir.</p>
+        </div>
+        <a class="link-arrow" href="riwayat.html">Lihat semua riwayat<img src="assets/icons/arrow-green.svg" width="16" height="16" alt=""></a>
+      </div>
+      <div class="panel reorder">
+        <div class="reorder__item">
+          <div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone" style="left:-88.46%;top:-138.75%;width:192.31%;height:258.56%"></div>
+          <div class="reorder__text"><strong>Gips Tipe IV Die Stone 5 kg</strong><span>Terakhir 11 Sep, 2 ember</span><small>Biasanya dipesan tiap 30 hari</small></div>
+          <a class="btn btn--primary btn--sm" href="keranjang.html">Pesan ulang</a>
+        </div>
+        <div class="reorder__item">
+          <div class="foto"><img src="assets/img/wax.jpg" alt="Wax Sheet 0,5 mm" style="left:-48.44%;top:-7.81%;width:156.25%;height:156.25%"></div>
+          <div class="reorder__text"><strong>Wax Sheet 0,5 mm</strong><span>Terakhir 3 Sep, 3 kotak</span><small>Biasanya dipesan tiap 3 minggu</small></div>
+          <a class="btn btn--primary btn--sm" href="keranjang.html">Pesan ulang</a>
+        </div>
+        <div class="reorder__item">
+          <div class="foto"><img src="assets/img/bur.jpg" alt="Bur Diamond Set" style="left:-41.67%;top:0;width:166.67%;height:111.12%"></div>
+          <div class="reorder__text"><strong>Bur Diamond Set 10 pcs</strong><span>Terakhir 22 Agu, 1 set</span><small>Biasanya dipesan tiap 2 bulan</small></div>
+          <a class="btn btn--primary btn--sm" href="keranjang.html">Pesan ulang</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="kategori">
+      <div class="section__head">
+        <div class="section__titles"><h2 class="section__title" id="kategori">Kategori bahan</h2></div>
+        <a class="link-arrow" href="katalog.html">Semua kategori<img src="assets/icons/arrow-green.svg" width="16" height="16" alt=""></a>
+      </div>
+      <nav class="panel cats" aria-label="Kategori bahan">
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/gips.jpg" alt="" style="left:-88.46%;top:-138.75%;width:192.31%;height:258.56%"></div>
+          <div class="cats__text"><strong>Gips</strong><span>24 produk</span></div>
+        </a>
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/wax.jpg" alt="" style="left:-48.44%;top:-7.81%;width:156.25%;height:156.25%"></div>
+          <div class="cats__text"><strong>Wax</strong><span>31 produk</span></div>
+        </a>
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/bur.jpg" alt="" style="left:-41.67%;top:0;width:166.67%;height:111.12%"></div>
+          <div class="cats__text"><strong>Bur &amp; Disk</strong><span>18 produk</span></div>
+        </a>
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/pmma.jpg" alt="" style="left:-16.67%;top:0;width:133.33%;height:100%"></div>
+          <div class="cats__text"><strong>PMMA &amp; Zirkonia</strong><span>14 produk</span></div>
+        </a>
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/alginat.jpg" alt="" style="left:-24.99%;top:0;width:149.98%;height:100%"></div>
+          <div class="cats__text"><strong>Bahan Cetak</strong><span>12 produk</span></div>
+        </a>
+        <a href="katalog.html">
+          <div class="foto"><img src="assets/img/sarung-tangan.jpg" alt="" style="left:-24.99%;top:0;width:149.98%;height:100%"></div>
+          <div class="cats__text"><strong>Sarung Tangan</strong><span>9 produk</span></div>
+        </a>
+      </nav>
+    </section>
+
+    <section class="section" aria-labelledby="populer">
+      <div class="section__head">
+        <div class="section__titles">
+          <h2 class="section__title" id="populer">Paling sering dipesan lab</h2>
+          <p class="section__sub">Dihitung dari pesanan lab di Medan selama 30 hari terakhir.</p>
+        </div>
+        <a class="link-arrow" href="katalog.html">Lihat katalog<img src="assets/icons/arrow-green.svg" width="16" height="16" alt=""></a>
+      </div>
+      <div class="product-grid">
+        <article class="card">
+          <a class="card__media" href="produk.html"><div class="foto"><img src="assets/img/gips.jpg" alt="Gips Tipe IV Die Stone 5 kg" style="left:-88.46%;top:-262.49%;width:192.31%;height:428.07%"></div></a>
+          <div class="card__body">
+            <div class="card__meta"><span class="mono">GP-IV-5G</span><span class="dot"></span><span>Gipsona</span></div>
+            <h3 class="card__name"><a href="produk.html">Gips Tipe IV Die Stone 5 kg, Golden</a></h3>
+            <div class="price"><strong>Rp 185.000</strong><span>/ ember</span></div>
+            <div class="stock"><span class="meter" data-level="ok"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>24 tersedia</div>
+            <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Gips Tipe IV Die Stone"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__media" href="produk.html"><div class="foto"><img src="assets/img/wax.jpg" alt="Wax Sheet 0,5 mm" style="left:-48.44%;top:-45.71%;width:156.25%;height:258.68%"></div></a>
+          <div class="card__body">
+            <div class="card__meta"><span class="mono">WX-05</span><span class="dot"></span><span>Waxwell</span></div>
+            <h3 class="card__name"><a href="produk.html">Wax Sheet 0,5 mm, isi 250 g</a></h3>
+            <div class="price"><strong>Rp 95.000</strong><span>/ kotak</span></div>
+            <div class="stock stock--low"><span class="meter" data-level="low"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span>Sisa 6</div>
+            <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Wax Sheet 0,5 mm"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__media" href="produk.html"><div class="foto"><img src="assets/img/pmma.jpg" alt="Disk PMMA 98 mm" style="left:-5.56%;top:-18.98%;width:111.11%;height:137.96%"></div></a>
+          <div class="card__body">
+            <div class="card__meta"><span class="mono">PM-98</span><span class="dot"></span><span>Polidisk</span></div>
+            <h3 class="card__name"><a href="produk.html">Disk PMMA 98 mm, shade A2</a></h3>
+            <div class="price"><strong>Rp 420.000</strong><span>/ pcs</span></div>
+            <div class="stock stock--low"><span class="meter" data-level="low"><i class="on"></i><i></i><i></i><i></i><i></i></span>Sisa 4</div>
+            <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-add-to-cart="Disk PMMA 98 mm"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Tambah ke keranjang</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__media" href="produk.html"><div class="foto"><img src="assets/img/alginat.jpg" alt="Alginat Normal Set 1 kg" style="left:-5.56%;top:-11.32%;width:111.11%;height:122.65%"></div></a>
+          <div class="card__body">
+            <div class="card__meta"><span class="mono">AL-01</span><span class="dot"></span><span>Algimix</span></div>
+            <h3 class="card__name"><a href="produk.html">Alginat Normal Set 1 kg</a></h3>
+            <div class="price"><strong>Rp 78.000</strong><span>/ pack</span></div>
+            <div class="stock stock--out"><span class="meter"><i></i><i></i><i></i><i></i><i></i></span>Habis, masuk 26 Sep</div>
+            <div class="card__action"><button class="btn btn--secondary btn--block" type="button" data-notify="Alginat Normal Set">Kabari saat tersedia</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>
